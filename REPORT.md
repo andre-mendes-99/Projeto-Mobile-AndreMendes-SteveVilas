@@ -38,6 +38,15 @@ A UC Competências Comunicacionais será aplicada durante as apresentações ao 
 \
 
 ## Mockups e Casos de Uso 
+![alt text](https://github.com/andre-mendes-99/Projeto-Mobile-AndreMendes-SteveVilas/blob/main/imgs_report/Diagrama%20projeto-P%C3%A1gina-1.drawio.png?raw=true) \
+\
+![alt text](https://github.com/andre-mendes-99/Projeto-Mobile-AndreMendes-SteveVilas/blob/main/imgs_report/Diagrama%20projeto-P%C3%A1gina-2.drawio.png?raw=true)\
+\
+![alt text](https://github.com/andre-mendes-99/Projeto-Mobile-AndreMendes-SteveVilas/blob/main/imgs_report/Diagrama%20projeto-P%C3%A1gina-3.drawio.png?raw=true)\
+\
+![alt text](https://github.com/andre-mendes-99/Projeto-Mobile-AndreMendes-SteveVilas/blob/main/imgs_report/Diagrama%20projeto-P%C3%A1gina-4.drawio.png?raw=true)\
+
+
 
 
 
