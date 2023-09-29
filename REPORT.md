@@ -1,5 +1,10 @@
 # Relatório de Projeto
 
+- [Introdução](#introdução)
+- [Objetivos](#objetivos)
+- [Como o projeto irá englobar todas as UCs](#como-o-projeto-irá-englobar-todas-as-ucs)
+- [Mockups e Casos de Uso](#mockups-e-casos-de-uso)
+
 ## Introdução 
 **Nome do Projeto: ClickerWare (Provisório)**
 O projeto será um jogo de clicker direcionado a qualquer pessoa, cujo o objetivo será o jogador à medida que carrega no ecrã vai ganhando pontos, com esses pontos o jogador pode comprar melhorias que aumentam o multiplicador de pontos por exemplo. Com isso o jogador pode gerar cada vez mais pontos a cada toque no ecrã e assim alcançar as conquistas do jogo. Durante o jogo haverá uma chance aleatória de um mini-jogo aparecer no ecrã, após completar o mini-jogo o jogador irá ser recompensado com pontos extras.
