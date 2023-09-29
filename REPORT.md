@@ -29,13 +29,17 @@ A UC Matemática Discreta terá papel na Janela de estatisticas do jogador
 A UC Programação Orientada a objetos terá papel no projeto todo pois visto que será implementado em Java teremos de aplicar os conceitos de POO
 \
 \
+**Programação para dispositivos móveis:**
+A aplicação vai ser desenvolvida para um dispositvo android utilizando os conhecimentos da UC Programação para dispositivos móveis
+\
+\
 **Bases de Dados:**
 A UC Bases de Dados terá papel na criação da base de dados que irá conter as informações do jogador, as suas estatisticas, progresso, etc…
 \
 \
 **Competências Comunicacionais:**
 A UC Competências Comunicacionais será aplicada durante as apresentações ao longo do projeto
-\
+
 
 ## Mockups e Casos de Uso 
 ![alt text](https://github.com/andre-mendes-99/Projeto-Mobile-AndreMendes-SteveVilas/blob/main/imgs_report/Diagrama%20projeto-P%C3%A1gina-1.drawio.png?raw=true) \
