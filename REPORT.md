@@ -1,4 +1,4 @@
-# Relatório de Projeto
+# Relatório de Projeto <!-- omit in toc -->
 
 - [Introdução](#introdução)
 - [Objetivos](#objetivos)
