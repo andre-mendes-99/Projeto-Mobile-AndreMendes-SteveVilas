@@ -21,6 +21,7 @@ O objetivo será fazer o jogo em java para mobile usando Android studio, a aplic
 - Implementação de uma loja para aquisição de melhorias.
 - Janela de estatísticas do jogador
 - Janela de Configurações onde o johgador poderá começar o jogo de novo
+- Implementação de Mini-Jogos: Jogo do Galo, Pedra-Papel-Tesoura, Jogo da Memória
 
 **Requisitos não Funcionais:**
 - Dispositivo móvel Android
