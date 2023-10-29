@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">Clicker</string>
+    <string name="app_name">ClickerWare</string>
+    <string name="username_label">Username</string>
+    <string name="password_label">Password</string>
+    <string name="username_hint">Username goes here...</string>
+    <string name="password_hint">Password goes here...</string>
+    <string name="login_btn">Login</string>
+    <string name="goregister_link">Don\'t have account click here</string>
 </resources>
