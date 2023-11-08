@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ClickerWare</string>
+    <string name="app_name">Blade Clicker</string>
     <string name="username_label">Username</string>
     <string name="password_label">Password</string>
     <string name="username_hint">Username goes here...</string>
