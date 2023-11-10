@@ -17,6 +17,13 @@
     //Main Page
     <string name="button_shop_game_home">Shop</string>
     <string name="button_achievements_game_home">Achievements</string>
+    <string name="button_stats_game_home">Stats</string>
+    <string name="button_settings_game_home">Achievements</string>
+
+    //Achievements
+
+    //Stats
+
 
     //Settings
     <string name="username_config_label">Username:</string>
