@@ -16,6 +16,12 @@
             android:name=".Game_Home_Activity"
             android:exported="false" />
         <activity
+            android:name=".Configurations_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Register_Activity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
