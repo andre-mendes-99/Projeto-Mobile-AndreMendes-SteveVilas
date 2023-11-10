@@ -7,4 +7,8 @@
     <string name="login_btn">Login</string>
     <string name="goregister_link">Don\'t have account click here</string>
     <string name="main_logo">Logo</string>
+    <string name="button_shop_game_home">Shop</string>
+    <string name="button_achievements_game_home">Achievements</string>
+    <string name="button_achievements_game_home">Achievements</string>
+    <string name="app_name">Blade Clicker</string>
 </resources>
