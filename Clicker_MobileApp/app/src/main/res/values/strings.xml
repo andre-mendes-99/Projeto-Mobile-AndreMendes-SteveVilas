@@ -4,14 +4,17 @@
     <string name="password_label">Password</string>
     <string name="username_hint">Username goes here...</string>
     <string name="password_hint">Password goes here...</string>
+    <string name="go_register_link">Don\'t have account click here</string>
+    <string name="login_btn">Login</string>
+
     <string name="password_confirmation_hint">Please confirm your password...</string>
     <string name="email_hint">Email goes here...</string>
-    <string name="login_btn">Login</string>
-    <string name="go_register_link">Don\'t have account click here</string>
+    <string name="btn_submit_regis">Register</string>
     <string name="main_logo">Logo</string>
+
     <string name="button_shop_game_home">Shop</string>
     <string name="button_achievements_game_home">Achievements</string>
-    <string name="btn_submit_regis">Register</string>
+
     <string name="username_config_label">Username:</string>
     <string name="provisory_text">loren ipsum</string>
     <string name="audio_settings_label">Audio Settings</string>
