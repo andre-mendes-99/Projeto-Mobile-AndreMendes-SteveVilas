@@ -94,7 +94,8 @@
         android:layout_height="wrap_content"
         android:text="@string/login_btn"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="160dp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextText"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
         tools:layout_editor_absoluteY="569dp" />
 
     <Button

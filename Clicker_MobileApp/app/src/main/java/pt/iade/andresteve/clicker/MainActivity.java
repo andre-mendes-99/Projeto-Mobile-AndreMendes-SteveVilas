@@ -20,7 +20,14 @@ public class MainActivity extends AppCompatActivity {
         btnregister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, Register_Activity.class));
+                if(true)
+                {
+
+                }
+                else
+                {
+                    startActivity(new Intent(MainActivity.this, Register_Activity.class));
+                }
             }
 
         });
