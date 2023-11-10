@@ -13,7 +13,7 @@
         android:layout_height="65dp"
         android:layout_marginEnd="350dp"
         android:background="#00FFFFFF"
-        app:icon="@android:drawable/ic_media_previous"
+        app:icon="@drawable/arrow_back"
         app:iconSize="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
