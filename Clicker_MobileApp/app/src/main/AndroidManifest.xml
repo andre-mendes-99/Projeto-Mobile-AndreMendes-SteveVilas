@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Clicker"
         tools:targetApi="31">
         <activity
+            android:name=".activity_achievements"
+            android:exported="false" />
+        <activity
             android:name=".Game_Home_Activity"
             android:exported="false" />
         <activity
