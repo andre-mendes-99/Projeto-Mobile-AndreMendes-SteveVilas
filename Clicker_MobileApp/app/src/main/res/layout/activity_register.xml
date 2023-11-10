@@ -7,17 +7,15 @@
     android:background="#D39F03"
     tools:context=".Register_Activity">
 
-    <Button
-        android:id="@+id/go_back_register_button"
-        android:layout_width="84dp"
-        android:layout_height="65dp"
+    <ImageButton
+        android:id="@+id/go_back_regiter_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="350dp"
-        android:background="#00FFFFFF"
-        app:icon="@android:drawable/ic_media_previous"
-        app:iconSize="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow_back" />
 
     <TableLayout
         android:id="@+id/tableLayout"
