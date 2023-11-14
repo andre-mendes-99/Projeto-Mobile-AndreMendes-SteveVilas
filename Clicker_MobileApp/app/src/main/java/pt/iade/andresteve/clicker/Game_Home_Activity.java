@@ -18,13 +18,13 @@ public class Game_Home_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_game_home);
 
         scoreView = (TextView)findViewById(R.id.score_game_home_textview);
-        scoreView.setText(score);
+        scoreView.setText("0");
         btnClickerTemp = (ImageButton) findViewById(R.id.button_clicker_home_page);
         btnClickerTemp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
              score+=1;
-             scoreView.setText(score);
+             scoreView.setText(Integer.toString(score));
             }
 
         });
