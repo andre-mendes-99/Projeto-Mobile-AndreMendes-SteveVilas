@@ -36,6 +36,10 @@ public class Register_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         btnGoBack = (ImageButton)findViewById(R.id.go_back_regiter_button);
+        btnRegister = (Button)findViewById(R.id.submit_regist_button);
+
+
+        //botão para voltar para trás:
         btnGoBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,7 +49,8 @@ public class Register_Activity extends AppCompatActivity {
         });
 
 
-        btnRegister = (Button)findViewById(R.id.submit_regist_button);
+
+        //botão de registo:
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

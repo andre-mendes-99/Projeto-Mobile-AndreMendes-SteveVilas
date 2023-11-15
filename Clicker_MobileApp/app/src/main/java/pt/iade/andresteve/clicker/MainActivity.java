@@ -31,23 +31,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btnRegister = (Button)findViewById(R.id.main_register_button);
+        btnLogin = (Button)findViewById(R.id.main_submit_login);
+
+        //botão para ir para ir para a página de registo:
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!CheckEntrys(view))
-                {
-                    //test
-                    Toast.makeText(getApplicationContext(), "Preencha as informações que faltam!", Toast.LENGTH_LONG).show();
-                }
-                else
-                {
+
                     startActivity(new Intent(MainActivity.this, Register_Activity.class));
-                }
+
             }
 
         });
 
-        btnLogin = (Button)findViewById(R.id.main_submit_login);
+        //botão para fazer login:
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

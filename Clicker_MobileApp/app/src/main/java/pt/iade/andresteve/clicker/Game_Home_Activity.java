@@ -2,6 +2,7 @@ package pt.iade.andresteve.clicker;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,8 +11,9 @@ import android.widget.TextView;
 
 public class Game_Home_Activity extends AppCompatActivity {
     private ImageButton btnClickerTemp;
+    private ImageButton btnConfig;
     private TextView scoreView;
-    private int score = 0;
+    private int score = 0; //temporário deopois começa com o valor da base de dados
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +21,11 @@ public class Game_Home_Activity extends AppCompatActivity {
 
         scoreView = (TextView)findViewById(R.id.score_game_home_textview);
         scoreView.setText(Integer.toString(score));
+
+        btnConfig = (ImageButton) findViewById(R.id.button_settings_game_home);
         btnClickerTemp = (ImageButton) findViewById(R.id.button_clicker_home_page);
+
+        //botão do clicker:
         btnClickerTemp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -28,5 +34,14 @@ public class Game_Home_Activity extends AppCompatActivity {
             }
 
         });
+
+        //botão de configurações:
+        btnConfig.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Game_Home_Activity.this, Configurations_Activity.class));
+            }
+        });
+
     }
 }
