@@ -31,6 +31,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
+        android:id="@+id/btn_minigame_game_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/btn_star"
+        tools:layout_editor_absoluteX="244dp"
+        tools:layout_editor_absoluteY="94dp" />
+
+    <ImageButton
         android:id="@+id/button_clicker_home_page"
         android:layout_width="410dp"
         android:layout_height="323dp"
