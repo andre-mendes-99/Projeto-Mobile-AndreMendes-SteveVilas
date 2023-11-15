@@ -19,10 +19,10 @@ public class Register_Activity extends AppCompatActivity {
     private EditText textEmail;
     public boolean TextBoxesFilled(View view)
     {
-        textUsername = (EditText)findViewById(R.id.username_login_text);
-        textPassword =(EditText)findViewById(R.id.password_login_text);
-        textConfirmPass = (EditText)findViewById(R.id.username_login_text);
-        textEmail =(EditText)findViewById(R.id.password_login_text);
+        textUsername = (EditText)findViewById(R.id.username_register_textbox);
+        textPassword =(EditText)findViewById(R.id.password_register_textbox);
+        textConfirmPass = (EditText)findViewById(R.id.password_confirmation_register_textbox);
+        textEmail =(EditText)findViewById(R.id.email_register_textbox);
         if(textPassword.getText().toString().equals("") || textUsername.getText().toString().equals("") || textConfirmPass.getText().toString().equals("") || textEmail.getText().toString().equals(""))
         {
             return false;
