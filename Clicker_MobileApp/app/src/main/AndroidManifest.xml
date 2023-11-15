@@ -16,6 +16,16 @@
             android:name=".activity_achievements"
             android:exported="false" />
         <activity
+            android:name=".activity_stats"
+            android:exported="false" />
+        <activity
+            android:name=".activity_shop"
+            android:exported="false" />
+
+        <activity
+            android:name=".Rock_Paper_Scissors_Activity"
+            android:exported="false" />
+        <activity
             android:name=".Game_Home_Activity"
             android:exported="false" />
         <activity
