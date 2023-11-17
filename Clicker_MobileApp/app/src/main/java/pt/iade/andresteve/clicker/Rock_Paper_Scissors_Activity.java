@@ -32,17 +32,18 @@ public class Rock_Paper_Scissors_Activity extends AppCompatActivity {
                 if (jogadaCpu == Rock) {
                     //empate
                     Intent myIntent = new Intent(Rock_Paper_Scissors_Activity.this, Rock_Paper_Scissors_Activity.class);
-                    myIntent.putExtra("score", gameInfo.score); //Optional parameters
+                    myIntent.putExtra("score", gameInfo.score);
                     Rock_Paper_Scissors_Activity.this.startActivity(myIntent);                }
                 else if (jogadaCpu == Paper) {
                     Intent myIntent = new Intent(Rock_Paper_Scissors_Activity.this, Game_Home_Activity.class);
-                    myIntent.putExtra("score", gameInfo.score); //Optional parameters
-                    Rock_Paper_Scissors_Activity.this.startActivity(myIntent);                    //perdeu
+                    myIntent.putExtra("score", gameInfo.score);
+                    Rock_Paper_Scissors_Activity.this.startActivity(myIntent);
+                    //perdeu
                 }
                 else if (jogadaCpu == Scissors) {
                     gameInfo.score+= reward;
                     Intent myIntent = new Intent(Rock_Paper_Scissors_Activity.this, Game_Home_Activity.class);
-                    myIntent.putExtra("score", gameInfo.score); //Optional parameters
+                    myIntent.putExtra("score", gameInfo.score);
                     Rock_Paper_Scissors_Activity.this.startActivity(myIntent);
                     //venceu
                 }
@@ -52,27 +53,28 @@ public class Rock_Paper_Scissors_Activity extends AppCompatActivity {
                     //vitoria
                     gameInfo.score+= reward;
                     Intent myIntent = new Intent(Rock_Paper_Scissors_Activity.this, Game_Home_Activity.class);
-                    myIntent.putExtra("score", gameInfo.score); //Optional parameters
+                    myIntent.putExtra("score", gameInfo.score);
                     Rock_Paper_Scissors_Activity.this.startActivity(myIntent);
                 }
                 else if (jogadaCpu == Paper) {
                     //empate
                     Intent myIntent = new Intent(Rock_Paper_Scissors_Activity.this, Rock_Paper_Scissors_Activity.class);
-                    myIntent.putExtra("score", gameInfo.score); //Optional parameters
+                    myIntent.putExtra("score", gameInfo.score);
                     Rock_Paper_Scissors_Activity.this.startActivity(myIntent);
                 } else if (jogadaCpu == Scissors)
                 {
                     //perdeu
                     Intent myIntent = new Intent(Rock_Paper_Scissors_Activity.this, Game_Home_Activity.class);
-                    myIntent.putExtra("score", gameInfo.score); //Optional parameters
-                    Rock_Paper_Scissors_Activity.this.startActivity(myIntent);                }
+                    myIntent.putExtra("score", gameInfo.score);
+                    Rock_Paper_Scissors_Activity.this.startActivity(myIntent);
+                }
                 break;
             case Scissors:
                 if(jogadaCpu == Rock)
                 {
                     //perdeu
                     Intent myIntent = new Intent(Rock_Paper_Scissors_Activity.this, Game_Home_Activity.class);
-                    myIntent.putExtra("score", gameInfo.score); //Optional parameters
+                    myIntent.putExtra("score", gameInfo.score);
                     Rock_Paper_Scissors_Activity.this.startActivity(myIntent);
                     // mas não ganha pontos
                 }
@@ -80,13 +82,13 @@ public class Rock_Paper_Scissors_Activity extends AppCompatActivity {
                     //vitoria
                     gameInfo.score+= reward;
                     Intent myIntent = new Intent(Rock_Paper_Scissors_Activity.this, Game_Home_Activity.class);
-                    myIntent.putExtra("score", gameInfo.score); //Optional parameters
+                    myIntent.putExtra("score", gameInfo.score);
                     Rock_Paper_Scissors_Activity.this.startActivity(myIntent);
                 }
                 else if (jogadaCpu  == Scissors) {
                     //empate
                     Intent myIntent = new Intent(Rock_Paper_Scissors_Activity.this, Rock_Paper_Scissors_Activity.class);
-                    myIntent.putExtra("score", gameInfo.score); //Optional parameters
+                    myIntent.putExtra("score", gameInfo.score);
                     Rock_Paper_Scissors_Activity.this.startActivity(myIntent);
                 }
 
@@ -111,7 +113,7 @@ public class Rock_Paper_Scissors_Activity extends AppCompatActivity {
         paperButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+            Game(Paper, gameInfo);
             }
         });
 
@@ -119,14 +121,14 @@ public class Rock_Paper_Scissors_Activity extends AppCompatActivity {
  rockButton.setOnClickListener(new View.OnClickListener() {
      @Override
      public void onClick(View v) {
-
+         Game(Rock, gameInfo);
      }
  });
         //player carrega no botão de tesoura:
     scissorButton.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-
+            Game(Scissors, gameInfo);
         }
     });
     }
