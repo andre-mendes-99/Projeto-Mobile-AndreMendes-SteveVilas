@@ -9,31 +9,44 @@
 
     <ImageButton
         android:id="@+id/rock_button_rock_paper_scissors"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_width="178dp"
+        android:layout_height="158dp"
+        android:layout_marginTop="25dp"
+        android:adjustViewBounds="true"
+        android:background="#00FFFFFF"
+        android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/alert_light_frame" />
+        app:srcCompat="@drawable/fist" />
 
     <ImageButton
         android:id="@+id/paper_button_rock_paper_scissors"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="178dp"
+        android:layout_height="158dp"
         android:layout_marginTop="100dp"
+        android:adjustViewBounds="true"
+        android:background="#00FFFFFF"
+        android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rock_button_rock_paper_scissors"
-        app:srcCompat="@android:drawable/alert_dark_frame" />
+        app:srcCompat="@android:drawable/alert_dark_frame"
+        tools:srcCompat="@drawable/scroll" />
 
     <ImageButton
         android:id="@+id/scissors_button_rock_paper_scissors"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="178dp"
+        android:layout_height="158dp"
         android:layout_marginTop="100dp"
+        android:layout_marginBottom="25dp"
+        android:adjustViewBounds="true"
+        android:background="#00FFFFFF"
+        android:cropToPadding="false"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/paper_button_rock_paper_scissors"
-        app:srcCompat="@android:drawable/ic_delete" />
+        app:srcCompat="@drawable/scissor" />
 </androidx.constraintlayout.widget.ConstraintLayout>
