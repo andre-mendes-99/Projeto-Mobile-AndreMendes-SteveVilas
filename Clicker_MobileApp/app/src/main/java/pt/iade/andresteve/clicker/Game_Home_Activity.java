@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.*;
 import android.widget.TextView;
 
+import pt.iade.andresteve.clicker.games.GameInfo;
+
 public class Game_Home_Activity extends AppCompatActivity {
     private ImageButton btnClickerTemp;
     private Button btnShop;
@@ -16,30 +18,32 @@ public class Game_Home_Activity extends AppCompatActivity {
     private ImageButton btnConfig;
     private ImageButton btnMiniGame;
     private TextView scoreView;
-    private int score = 0; //temporário deopois começa com o valor da base de dados
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_home);
-
+        GameInfo gameInfo = new GameInfo();
+        Intent intent = getIntent();
+        gameInfo.score = intent.getDoubleExtra("score", 0);
         //Score View:
         scoreView = (TextView)findViewById(R.id.score_game_home_textview);
-        scoreView.setText(Integer.toString(score));
+        scoreView.setText(Double.toString(gameInfo.score));
 
         //Buttons:
         btnMiniGame= (ImageButton) findViewById(R.id.btn_minigame_game_home);
         btnConfig = (ImageButton) findViewById(R.id.button_settings_game_home);
         btnClickerTemp = (ImageButton) findViewById(R.id.button_clicker_home_page);
         btnShop = (Button)findViewById(R.id.button_shop_game_home);
-        btnAchievments = (Button)findViewById(R.id.button_achievements_game_home);
+        btnAchievments = (Button)findViewById(R.id.button_achievements_home);
         btnStats = (Button)findViewById(R.id.button_stats_game_home);
 
         //botão do clicker:
         btnClickerTemp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-             score+=1;
-             scoreView.setText(Integer.toString(score));
+                gameInfo.score+=1;
+             scoreView.setText(Double.toString(gameInfo.score));
             }
 
         });
@@ -48,7 +52,9 @@ public class Game_Home_Activity extends AppCompatActivity {
         btnConfig.setOnClickListener(new View.OnClickListener() {
             @Override 
             public void onClick(View view) {
-                startActivity(new Intent(Game_Home_Activity.this, Configurations_Activity.class));
+                Intent myIntent = new Intent(Game_Home_Activity.this, Configurations_Activity.class);
+                myIntent.putExtra("score", gameInfo.score); //Optional parameters
+                Game_Home_Activity.this.startActivity(myIntent);
             }
         });
 
@@ -56,8 +62,9 @@ public class Game_Home_Activity extends AppCompatActivity {
         btnMiniGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                startActivity(new Intent(Game_Home_Activity.this, Rock_Paper_Scissors_Activity.class));
+                Intent myIntent = new Intent(Game_Home_Activity.this, Rock_Paper_Scissors_Activity.class);
+                myIntent.putExtra("score", gameInfo.score); //Optional parameters
+                Game_Home_Activity.this.startActivity(myIntent);
             }
         });
 
@@ -65,7 +72,9 @@ public class Game_Home_Activity extends AppCompatActivity {
         btnShop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Game_Home_Activity.this, activity_shop.class));
+                Intent myIntent = new Intent(Game_Home_Activity.this, activity_shop.class);
+                myIntent.putExtra("score", gameInfo.score); //Optional parameters
+                Game_Home_Activity.this.startActivity(myIntent);
             }
         });
 
@@ -73,7 +82,9 @@ public class Game_Home_Activity extends AppCompatActivity {
         btnAchievments.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Game_Home_Activity.this, activity_achievements.class));
+                Intent myIntent = new Intent(Game_Home_Activity.this, activity_achievements.class);
+                myIntent.putExtra("score", gameInfo.score); //Optional parameters
+                Game_Home_Activity.this.startActivity(myIntent);
 
             }
         });
@@ -82,8 +93,9 @@ public class Game_Home_Activity extends AppCompatActivity {
         btnStats.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Game_Home_Activity.this, activity_stats.class));
-            }
+                Intent myIntent = new Intent(Game_Home_Activity.this, activity_stats.class);
+                myIntent.putExtra("score", gameInfo.score); //Optional parameters
+                Game_Home_Activity.this.startActivity(myIntent);            }
         });
     }
 }

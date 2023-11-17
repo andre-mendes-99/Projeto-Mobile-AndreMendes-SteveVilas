@@ -37,21 +37,21 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
-            android:id="@+id/button_shop_shop"
+            android:id="@+id/button_shop_game_home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/button_shop_game_home" />
 
         <Button
-            android:id="@+id/button_achievements_shop"
+            android:id="@+id/button_achievements_home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/button_achievements_game_home" />
 
         <Button
-            android:id="@+id/button_stats_shop"
+            android:id="@+id/button_stats_game_home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
