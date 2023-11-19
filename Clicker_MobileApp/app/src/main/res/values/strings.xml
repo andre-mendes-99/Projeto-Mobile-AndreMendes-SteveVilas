@@ -21,6 +21,11 @@
     <string name="button_stats_game_home">Stats</string>
     <string name="button_settings_game_home">Achievements</string>
 
+    //Rock, Paper, Scissors
+    <string name="button_rock">Rock</string>
+    <string name="button_paper">Paper</string>
+    <string name="button_scissors">Scissors</string>
+
     //Achievements
 
     //Stats

@@ -1,7 +1,9 @@
 package pt.iade.andresteve.clicker;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -26,70 +28,157 @@ public class Rock_Paper_Scissors_Activity extends AppCompatActivity {
 
     public void Game(int jogada,  GameInfo gameInfo) {
         int jogadaCpu = rand.nextInt(4);
+        AlertDialog.Builder alert = new AlertDialog.Builder(Rock_Paper_Scissors_Activity.this);
         int reward= 100; //Todo calcular reward
         switch (jogada) {
             case Rock:
                 if (jogadaCpu == Rock) {
                     //empate
-                    Intent myIntent = new Intent(Rock_Paper_Scissors_Activity.this, Rock_Paper_Scissors_Activity.class);
-                    myIntent.putExtra("score", gameInfo.score);
-                    Rock_Paper_Scissors_Activity.this.startActivity(myIntent);                }
+                    alert.setMessage("Your adversary played Rock!");
+                    alert.setTitle("Draw!!");
+                    alert.setCancelable(false);
+
+                    alert.setPositiveButton("Ok", (DialogInterface.OnClickListener) (dialog, which) -> {
+                        Intent myIntent = new Intent(Rock_Paper_Scissors_Activity.this, Rock_Paper_Scissors_Activity.class);
+                        myIntent.putExtra("score", gameInfo.score);
+                        Rock_Paper_Scissors_Activity.this.startActivity(myIntent);
+                    });
+
+                    AlertDialog alertDialog = alert.create();
+                    alertDialog.show();
+                }
                 else if (jogadaCpu == Paper) {
-                    Intent myIntent = new Intent(Rock_Paper_Scissors_Activity.this, Game_Home_Activity.class);
-                    myIntent.putExtra("score", gameInfo.score);
-                    Rock_Paper_Scissors_Activity.this.startActivity(myIntent);
                     //perdeu
+                    alert.setMessage("Your adversary played Paper!");
+                    alert.setTitle("Lost!!");
+                    alert.setCancelable(false);
+
+                    alert.setPositiveButton("Ok", (DialogInterface.OnClickListener) (dialog, which) -> {
+
+                        Intent myIntent = new Intent(Rock_Paper_Scissors_Activity.this, Game_Home_Activity.class);
+                        myIntent.putExtra("score", gameInfo.score);
+                        Rock_Paper_Scissors_Activity.this.startActivity(myIntent);
+                    });
+
+                    AlertDialog alertDialog = alert.create();
+                    alertDialog.show();
                 }
                 else if (jogadaCpu == Scissors) {
-                    gameInfo.score+= reward;
-                    Intent myIntent = new Intent(Rock_Paper_Scissors_Activity.this, Game_Home_Activity.class);
-                    myIntent.putExtra("score", gameInfo.score);
-                    Rock_Paper_Scissors_Activity.this.startActivity(myIntent);
-                    //venceu
+                    //vitoria
+                    alert.setMessage("Your adversary played Scissors!");
+                    alert.setTitle("Victory!!");
+                    alert.setCancelable(false);
+
+                    alert.setPositiveButton("Ok", (DialogInterface.OnClickListener) (dialog, which) -> {
+                        gameInfo.score += reward;
+                        Intent myIntent = new Intent(Rock_Paper_Scissors_Activity.this, Game_Home_Activity.class);
+                        myIntent.putExtra("score", gameInfo.score);
+                        Rock_Paper_Scissors_Activity.this.startActivity(myIntent);
+                    });
+
+                    AlertDialog alertDialog = alert.create();
+                    alertDialog.show();
                 }
                 break;
+
             case Paper:
                 if(jogadaCpu == Rock){
                     //vitoria
-                    gameInfo.score+= reward;
-                    Intent myIntent = new Intent(Rock_Paper_Scissors_Activity.this, Game_Home_Activity.class);
-                    myIntent.putExtra("score", gameInfo.score);
-                    Rock_Paper_Scissors_Activity.this.startActivity(myIntent);
+                    alert.setMessage("Your adversary played Rock!");
+                    alert.setTitle("Victory!!");
+                    alert.setCancelable(false);
+
+                    alert.setPositiveButton("Ok", (DialogInterface.OnClickListener) (dialog, which) -> {
+                        gameInfo.score += reward;
+                        Intent myIntent = new Intent(Rock_Paper_Scissors_Activity.this, Game_Home_Activity.class);
+                        myIntent.putExtra("score", gameInfo.score);
+                        Rock_Paper_Scissors_Activity.this.startActivity(myIntent);
+                    });
+
+                    AlertDialog alertDialog = alert.create();
+                    alertDialog.show();
                 }
                 else if (jogadaCpu == Paper) {
                     //empate
-                    Intent myIntent = new Intent(Rock_Paper_Scissors_Activity.this, Rock_Paper_Scissors_Activity.class);
-                    myIntent.putExtra("score", gameInfo.score);
-                    Rock_Paper_Scissors_Activity.this.startActivity(myIntent);
+                    alert.setMessage("Yor adversary played Paper!");
+                    alert.setTitle("Draw!!");
+                    alert.setCancelable(false);
+
+                    alert.setPositiveButton("Ok", (DialogInterface.OnClickListener) (dialog, which) -> {
+                        Intent myIntent = new Intent(Rock_Paper_Scissors_Activity.this, Rock_Paper_Scissors_Activity.class);
+                        myIntent.putExtra("score", gameInfo.score);
+                        Rock_Paper_Scissors_Activity.this.startActivity(myIntent);
+                    });
+
+                    AlertDialog alertDialog = alert.create();
+                    alertDialog.show();
+
                 } else if (jogadaCpu == Scissors)
                 {
                     //perdeu
-                    Intent myIntent = new Intent(Rock_Paper_Scissors_Activity.this, Game_Home_Activity.class);
-                    myIntent.putExtra("score", gameInfo.score);
-                    Rock_Paper_Scissors_Activity.this.startActivity(myIntent);
+                    alert.setMessage("Your adversary played Scissors!");
+                    alert.setTitle("Lost!!");
+                    alert.setCancelable(false);
+
+                    alert.setPositiveButton("Ok", (DialogInterface.OnClickListener) (dialog, which) -> {
+
+                        Intent myIntent = new Intent(Rock_Paper_Scissors_Activity.this, Game_Home_Activity.class);
+                        myIntent.putExtra("score", gameInfo.score);
+                        Rock_Paper_Scissors_Activity.this.startActivity(myIntent);
+                    });
+
+                    AlertDialog alertDialog = alert.create();
+                    alertDialog.show();
                 }
                 break;
             case Scissors:
                 if(jogadaCpu == Rock)
                 {
                     //perdeu
-                    Intent myIntent = new Intent(Rock_Paper_Scissors_Activity.this, Game_Home_Activity.class);
-                    myIntent.putExtra("score", gameInfo.score);
-                    Rock_Paper_Scissors_Activity.this.startActivity(myIntent);
-                    // mas não ganha pontos
+                    alert.setMessage("Your adversary played Rock!");
+                    alert.setTitle("Lost!!");
+                    alert.setCancelable(false);
+
+                    alert.setPositiveButton("Ok", (DialogInterface.OnClickListener) (dialog, which) -> {
+
+                        Intent myIntent = new Intent(Rock_Paper_Scissors_Activity.this, Game_Home_Activity.class);
+                        myIntent.putExtra("score", gameInfo.score);
+                        Rock_Paper_Scissors_Activity.this.startActivity(myIntent);
+                    });
+
+                    AlertDialog alertDialog = alert.create();
+                    alertDialog.show();
                 }
                 else if (jogadaCpu == Paper) {
                     //vitoria
-                    gameInfo.score+= reward;
-                    Intent myIntent = new Intent(Rock_Paper_Scissors_Activity.this, Game_Home_Activity.class);
-                    myIntent.putExtra("score", gameInfo.score);
-                    Rock_Paper_Scissors_Activity.this.startActivity(myIntent);
+                    alert.setMessage("Your adversary played Paper!");
+                    alert.setTitle("Victory!!");
+                    alert.setCancelable(false);
+
+                    alert.setPositiveButton("Ok", (DialogInterface.OnClickListener) (dialog, which) -> {
+                        gameInfo.score += reward;
+                        Intent myIntent = new Intent(Rock_Paper_Scissors_Activity.this, Game_Home_Activity.class);
+                        myIntent.putExtra("score", gameInfo.score);
+                        Rock_Paper_Scissors_Activity.this.startActivity(myIntent);
+                    });
+
+                    AlertDialog alertDialog = alert.create();
+                    alertDialog.show();
                 }
                 else if (jogadaCpu  == Scissors) {
                     //empate
-                    Intent myIntent = new Intent(Rock_Paper_Scissors_Activity.this, Rock_Paper_Scissors_Activity.class);
-                    myIntent.putExtra("score", gameInfo.score);
-                    Rock_Paper_Scissors_Activity.this.startActivity(myIntent);
+                    alert.setMessage("Your adversary played Scissors!");
+                    alert.setTitle("Draw!");
+                    alert.setCancelable(false);
+
+                    alert.setPositiveButton("Ok", (DialogInterface.OnClickListener) (dialog, which) -> {
+                        Intent myIntent = new Intent(Rock_Paper_Scissors_Activity.this, Rock_Paper_Scissors_Activity.class);
+                        myIntent.putExtra("score", gameInfo.score);
+                        Rock_Paper_Scissors_Activity.this.startActivity(myIntent);
+                    });
+
+                    AlertDialog alertDialog = alert.create();
+                    alertDialog.show();
                 }
 
                 break;
