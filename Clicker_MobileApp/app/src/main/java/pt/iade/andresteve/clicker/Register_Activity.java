@@ -17,6 +17,17 @@ public class Register_Activity extends AppCompatActivity {
     private EditText textPassword;
     private EditText textConfirmPass;
     private EditText textEmail;
+
+    public boolean checkPass(View view){
+        textPassword =(EditText)findViewById(R.id.password_register_textbox);
+        textConfirmPass = (EditText)findViewById(R.id.password_confirmation_register_textbox);
+        if(!textConfirmPass.getText().toString().equals(textPassword.getText().toString()))
+        {
+            return false;
+        }
+        return true;
+    }
+
     public boolean TextBoxesFilled(View view)
     {
         textUsername = (EditText)findViewById(R.id.username_register_textbox);
@@ -58,6 +69,10 @@ public class Register_Activity extends AppCompatActivity {
                 {
                     //test
                     Toast.makeText(getApplicationContext(), "Preencha as informações que faltam!", Toast.LENGTH_LONG).show();
+                }
+                else if(!checkPass(view))
+                {
+                    Toast.makeText(getApplicationContext(), "A password inserida não é igual à do campo Password!", Toast.LENGTH_LONG).show();
                 }
                 else
                 {
