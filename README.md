@@ -6,6 +6,8 @@
 - [Objetivos](#objetivos)
 - [Como o projeto irá englobar todas as UCs](#como-o-projeto-irá-englobar-todas-as-ucs)
 - [Mockups e Casos de Uso](#mockups-e-casos-de-uso)
+- [Base de Dados](#base-de-dados)
+
 
 ## Introdução 
 **Nome do Projeto: Blade Clicker**
@@ -58,6 +60,10 @@ A UC Competências Comunicacionais será aplicada durante as apresentações ao 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![alt text](https://github.com/andre-mendes-99/Projeto-Mobile-AndreMendes-SteveVilas/blob/main/imgs_report/Diagrama%20projeto-P%C3%A1gina-3.drawio.png?raw=true)\
 \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![alt text](https://github.com/andre-mendes-99/Projeto-Mobile-AndreMendes-SteveVilas/blob/main/imgs_report/Diagrama%20projeto-P%C3%A1gina-4.drawio.png?raw=true)
+
+## Base de Dados
+![alt text](https://github.com/andre-mendes-99/Projeto-Mobile-AndreMendes-SteveVilas/blob/main/Database/Docs/ER_bladeclicker.jpg?raw=true)
+
 
 
 
