@@ -27,10 +27,32 @@
     <string name="button_scissors">Scissors</string>
 
     //Achievements
+    <string name="button_shop_achievements">Shop</string>
+    <string name="button_achievements_achievements">Achievements</string>
+    <string name="button_stats_achievements">Stats</string>
+    <string name="achievement_1">Achievement 1</string>
+    <string name="achievement_2">Achievement 2</string>
+    <string name="achievement_3">Achievement 3</string>
+    <string name="achievement_4">AChievement 4</string>
 
     //Stats
+    <string name="button_shop_stats">Shop</string>
+    <string name="button_achievements_stats">Achievements</string>
+    <string name="button_stats_stats">Stats</string>
+    <string name="stats_1">Stats 1</string>
+    <string name="stats_2">Stats 2</string>
+    <string name="stats_3">Stats 3</string>
+    <string name="stats_4">Stats 4</string>
+
 
     //Shop
+    <string name="button_shop_shop">Shop</string>
+    <string name="button_achievements_shop">Achievements</string>
+    <string name="button_stats_shop">Stats</string>
+    <string name="shop_upgrade_1">Upgrade 1</string>
+    <string name="shop_upgrade_2">Upgrade 2</string>
+    <string name="shop_upgrade_3">Upgrade 3</string>
+    <string name="shop_upgrade_4">Upgrade 4</string>
 
 
     //Settings

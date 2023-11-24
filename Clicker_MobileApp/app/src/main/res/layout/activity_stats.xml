@@ -5,6 +5,7 @@
     android:id="@+id/button_shop_shop"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".activity_stats">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:text="TextView"
+            android:text="@string/stats_4"
             android:textSize="34sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -29,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="50dp"
-            android:text="TextView"
+            android:text="@string/stats_1"
             android:textSize="34sp"
             app:layout_constraintBottom_toTopOf="@+id/stats_2"
             app:layout_constraintStart_toStartOf="parent"
@@ -41,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:layout_marginBottom="50dp"
-            android:text="TextView"
+            android:text="@string/stats_2"
             android:textSize="34sp"
             app:layout_constraintBottom_toTopOf="@+id/stats_3"
             app:layout_constraintStart_toStartOf="parent"
@@ -53,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:layout_marginBottom="50dp"
-            android:text="TextView"
+            android:text="@string/stats_3"
             android:textSize="34sp"
             app:layout_constraintBottom_toTopOf="@+id/stats_4"
             app:layout_constraintStart_toStartOf="parent"
@@ -71,30 +72,29 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
-            android:id="@+id/button_shop_game_home"
+            android:id="@+id/button_shop_stats"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="@string/button_shop_stats" />
 
         <Button
-            android:id="@+id/button_achievements_home"
+            android:id="@+id/button_achievements_stats"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="@string/button_achievements_stats" />
 
         <Button
-            android:id="@+id/button_stats_game_home"
+            android:id="@+id/button_stats_stats"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
-
+            android:text="@string/button_stats_stats" />
     </LinearLayout>
 
     <ImageButton
-        android:id="@+id/imageButton5"
+        android:id="@+id/button_settings_stats"
         android:layout_width="80dp"
         android:layout_height="57dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -102,7 +102,7 @@
         app:srcCompat="@drawable/gear_settings" />
 
     <ImageButton
-        android:id="@+id/imageButton6"
+        android:id="@+id/button_go_back_stats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
