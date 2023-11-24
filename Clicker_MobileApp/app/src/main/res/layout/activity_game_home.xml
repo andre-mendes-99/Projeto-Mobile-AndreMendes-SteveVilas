@@ -44,8 +44,12 @@
 
     <ImageButton
         android:id="@+id/button_clicker_home_page"
-        android:layout_width="410dp"
-        android:layout_height="323dp"
+        android:layout_width="408dp"
+        android:layout_height="325dp"
+        android:adjustViewBounds="true"
+        android:background="#00FFFFFF"
+        android:scaleType="fitCenter"
+        android:src="@drawable/knife"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -95,6 +99,7 @@
         android:layout_width="80dp"
         android:layout_height="57dp"
         android:layout_marginStart="320dp"
+        android:background="#00FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
