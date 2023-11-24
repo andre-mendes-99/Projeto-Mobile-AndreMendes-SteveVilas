@@ -24,6 +24,7 @@ public class Rock_Paper_Scissors_Activity extends AppCompatActivity {
     public static final int Rock = 1;
     public static final int Paper = 2;
     public static final int Scissors = 3;
+
     Random rand = new Random();
 
     public void Game(int jogada,  GameInfo gameInfo) {
@@ -184,6 +185,7 @@ public class Rock_Paper_Scissors_Activity extends AppCompatActivity {
                 break;
         }
     }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
