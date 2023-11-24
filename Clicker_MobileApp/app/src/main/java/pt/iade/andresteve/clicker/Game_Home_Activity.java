@@ -48,7 +48,7 @@ public class Game_Home_Activity extends AppCompatActivity {
 
         });
 
-        //botão de configurações:
+        //botão de configurações
         btnConfig.setOnClickListener(new View.OnClickListener() {
             @Override 
             public void onClick(View view) {

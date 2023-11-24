@@ -2,16 +2,62 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/textview_scorepoints_shop"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
     tools:context=".activity_shop">
 
+    <ImageButton
+        android:id="@+id/button_go_back_shop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow_back" />
+
+    <TextView
+        android:id="@+id/text_view_scorelabel_shop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="120dp"
+        android:text="@string/score_label_game_home"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/button_settings_shop"
+        app:layout_constraintStart_toEndOf="@+id/button_go_back_shop"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_score_points_shop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toStartOf="@+id/button_settings_shop"
+        app:layout_constraintStart_toEndOf="@+id/text_view_scorelabel_shop"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/button_settings_shop"
+        android:layout_width="80dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/gear_settings" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="5dp"
-        tools:layout_editor_absoluteY="95dp">
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_scorelabel_shop">
 
         <TextView
             android:id="@+id/shop_upgrade_4"
@@ -19,6 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:text="@string/shop_upgrade_4"
+            android:textColor="@color/white"
             android:textSize="34sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -31,6 +78,7 @@
             android:layout_marginTop="50dp"
             android:layout_marginBottom="50dp"
             android:text="@string/shop_upgrade_3"
+            android:textColor="#FFFFFF"
             android:textSize="34sp"
             app:layout_constraintBottom_toTopOf="@+id/shop_upgrade_4"
             app:layout_constraintStart_toStartOf="parent"
@@ -43,6 +91,7 @@
             android:layout_marginTop="50dp"
             android:layout_marginBottom="50dp"
             android:text="@string/shop_upgrade_2"
+            android:textColor="#FFFFFF"
             android:textSize="34sp"
             app:layout_constraintBottom_toTopOf="@+id/shop_upgrade_3"
             app:layout_constraintStart_toStartOf="parent"
@@ -54,6 +103,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="50dp"
             android:text="@string/shop_upgrade_1"
+            android:textColor="#FFFFFF"
             android:textSize="34sp"
             app:layout_constraintBottom_toTopOf="@+id/shop_upgrade_2"
             app:layout_constraintStart_toStartOf="parent"
@@ -105,6 +155,7 @@
             app:layout_constraintTop_toBottomOf="@+id/button_shop_upgrade_confirm_3"
             app:layout_constraintVertical_bias="1.0"
             app:srcCompat="@android:drawable/ic_input_add" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
@@ -139,21 +190,4 @@
             android:text="@string/button_stats_shop" />
     </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/button_settings_shop"
-        android:layout_width="80dp"
-        android:layout_height="57dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/gear_settings" />
-
-    <ImageButton
-        android:id="@+id/button_go_back_shop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/arrow_back" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,6 +17,75 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/gear_settings" />
 
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="599dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_go_back_achievements_button">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/achievement_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp"
+                android:text="@string/achievement_1"
+                android:textColor="#FFFFFF"
+                android:textSize="34sp"
+                app:layout_constraintBottom_toTopOf="@+id/achievement_2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/achievement_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="50dp"
+                android:text="@string/achievement_2"
+                android:textColor="#FFFFFF"
+                android:textSize="34sp"
+                app:layout_constraintBottom_toTopOf="@+id/achievement_3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/achievement_1" />
+
+            <TextView
+                android:id="@+id/achievement_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="50dp"
+                android:text="@string/achievement_3"
+                android:textColor="#FFFFFF"
+                android:textSize="34sp"
+                app:layout_constraintBottom_toTopOf="@+id/achievement_4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/achievement_2" />
+
+            <TextView
+                android:id="@+id/achievement_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="@string/achievement_4"
+                android:textColor="#FFFFFF"
+                android:textSize="34sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/achievement_3"
+                app:layout_constraintVertical_bias="0.734" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="411dp"
@@ -48,70 +117,6 @@
             android:layout_weight="1"
             android:text="@string/button_stats_achievements" />
     </LinearLayout>
-
-    <ScrollView
-        android:layout_width="409dp"
-        android:layout_height="599dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginBottom="1dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_settings_achievements">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/achievement_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="50dp"
-                android:text="@string/achievement_3"
-                android:textSize="34sp"
-                app:layout_constraintBottom_toTopOf="@+id/achievement_4"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/achievement_2" />
-
-            <TextView
-                android:id="@+id/achievement_4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:text="@string/achievement_4"
-                android:textSize="34sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/achievement_3"
-                app:layout_constraintVertical_bias="0.734" />
-
-            <TextView
-                android:id="@+id/achievement_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="50dp"
-                android:text="@string/achievement_2"
-                android:textSize="34sp"
-                app:layout_constraintBottom_toTopOf="@+id/achievement_3"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/achievement_1" />
-
-            <TextView
-                android:id="@+id/achievement_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="50dp"
-                android:text="@string/achievement_1"
-                android:textSize="34sp"
-                app:layout_constraintBottom_toTopOf="@+id/achievement_2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
 
     <ImageButton
         android:id="@+id/button_go_back_achievements_button"

@@ -8,8 +8,9 @@
     tools:context=".Configurations_Activity">
 
     <TableLayout
-        android:layout_width="363dp"
-        android:layout_height="531dp"
+        android:layout_width="402dp"
+        android:layout_height="304dp"
+        android:background="#C6FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -33,8 +33,7 @@
         app:layout_constraintEnd_toEndOf="@+id/rock_button_rock_paper_scissors"
         app:layout_constraintStart_toStartOf="@+id/rock_button_rock_paper_scissors"
         app:layout_constraintTop_toBottomOf="@+id/rock_button_rock_paper_scissors"
-        app:srcCompat="@android:drawable/alert_dark_frame"
-        tools:srcCompat="@drawable/scroll" />
+        app:srcCompat="@drawable/scroll" />
 
     <ImageButton
         android:id="@+id/scissors_button_rock_paper_scissors"
