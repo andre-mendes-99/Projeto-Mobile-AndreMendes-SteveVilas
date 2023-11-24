@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/button_shop_shop"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity_stats">
@@ -59,26 +60,6 @@
             app:layout_constraintTop_toBottomOf="@+id/stats_2" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ImageButton
-        android:id="@+id/go_back_stats_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/arrow_back" />
-
-    <ImageButton
-        android:id="@+id/button_settings_stats"
-        android:layout_width="80dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="320dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/gear_settings" />
-
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="411dp"
@@ -94,20 +75,39 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/button_shop_game_home" />
+            android:text="Button" />
 
         <Button
             android:id="@+id/button_achievements_home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/button_achievements_game_home" />
+            android:text="Button" />
 
         <Button
             android:id="@+id/button_stats_game_home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/button_stats_game_home" />
+            android:text="Button" />
+
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="80dp"
+        android:layout_height="57dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/gear_settings" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow_back" />
 </androidx.constraintlayout.widget.ConstraintLayout>
