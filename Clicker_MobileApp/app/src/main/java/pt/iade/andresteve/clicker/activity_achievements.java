@@ -12,8 +12,10 @@ import pt.iade.andresteve.clicker.games.GameInfo;
 
 public class activity_achievements extends AppCompatActivity {
     private ImageButton btnGoBack;
+    private ImageButton btnConfig;
     private Button btnShop;
     private Button btnStats;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +29,18 @@ public class activity_achievements extends AppCompatActivity {
         btnGoBack = (ImageButton) findViewById(R.id.button_go_back_achievements_button);
         btnStats = (Button) findViewById(R.id.button_stats_achievements);
         btnShop =(Button) findViewById(R.id.button_shop_achievements);
+        btnConfig = (ImageButton) findViewById(R.id.button_settings_achievements);
+
+        //botão de configurações
+        btnConfig.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(activity_achievements.this, Configurations_Activity.class);
+                myIntent.putExtra("score", gameInfo.score); //Optional parameters
+                activity_achievements.this.startActivity(myIntent);
+            }
+        });
+
         //Botão para voltar atrás:
         btnGoBack.setOnClickListener(new View.OnClickListener() {
             @Override

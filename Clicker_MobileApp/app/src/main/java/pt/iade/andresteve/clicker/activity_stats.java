@@ -14,6 +14,7 @@ public class activity_stats extends AppCompatActivity {
     private ImageButton btnGoBack;
     private Button btnAchievments;
     private Button btnShop;
+    private ImageButton btnConfig;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,18 @@ public class activity_stats extends AppCompatActivity {
         btnGoBack = (ImageButton) findViewById(R.id.button_go_back_stats);
         btnAchievments =(Button) findViewById(R.id.button_achievements_stats);
         btnShop =  (Button) findViewById(R.id.button_shop_stats);
+        btnConfig = (ImageButton) findViewById(R.id.button_settings_stats);
+
+
+        //botão de configurações
+        btnConfig.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(activity_stats.this, Configurations_Activity.class);
+                myIntent.putExtra("score", gameInfo.score); //Optional parameters
+                activity_stats.this.startActivity(myIntent);
+            }
+        });
 
         //Botão para voltar atrás:
         btnGoBack.setOnClickListener(new View.OnClickListener() {

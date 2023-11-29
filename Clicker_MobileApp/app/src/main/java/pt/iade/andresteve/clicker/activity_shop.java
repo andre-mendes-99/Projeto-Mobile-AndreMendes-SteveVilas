@@ -13,6 +13,7 @@ import pt.iade.andresteve.clicker.games.GameInfo;
 
 public class activity_shop extends AppCompatActivity {
     private ImageButton btnGoBack;
+    private ImageButton btnConfig;
     private Button btnAchievments;
     private Button btnStats;
     private TextView scoreView;
@@ -32,6 +33,17 @@ public class activity_shop extends AppCompatActivity {
         btnGoBack = (ImageButton) findViewById(R.id.button_go_back_shop);
         btnStats = (Button) findViewById(R.id.button_stats_shop);
         btnAchievments = (Button) findViewById(R.id.button_achievements_shop);
+        btnConfig = (ImageButton) findViewById(R.id.button_settings_shop);
+
+        //botão de configurações
+        btnConfig.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(activity_shop.this, Configurations_Activity.class);
+                myIntent.putExtra("score", gameInfo.score); //Optional parameters
+                activity_shop.this.startActivity(myIntent);
+            }
+        });
 
         //Botão para voltar atrás:
         btnGoBack.setOnClickListener(new View.OnClickListener() {
