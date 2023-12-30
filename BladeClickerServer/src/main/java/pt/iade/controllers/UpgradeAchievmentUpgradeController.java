@@ -11,11 +11,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import pt.iade.andremendesstevevilas.bladeclicker.BladeClickerServer.models.Upgrade_Achievment_Upgrade;
 import pt.iade.andremendesstevevilas.bladeclicker.BladeClickerServer.models.Response;
 import pt.iade.andremendesstevevilas.bladeclicker.BladeClickerServer.models.repositories.Upgrade_Achievment_Upgrade_Repository;
 
+
+@RestController
+@RequestMapping(path = "/api/upgradeachievmentupgrades")
 public class UpgradeAchievmentUpgradeController {
     private Logger logger = (Logger) LoggerFactory.getLogger(UpgradeAchievmentUpgradeController.class);
     @Autowired

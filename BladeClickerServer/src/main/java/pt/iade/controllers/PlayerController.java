@@ -44,8 +44,15 @@ public class PlayerController {
     }
 
     @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Player addPLayer(@RequestBody Player player) {
-        Player savedPlayer = playerRepository.save(player);
+    public Player addPLayer(@RequestBody Player addplayer) {
+        Iterable<Player> listPlayers = playerRepository.findAll();
+        for (Player player : listPlayers) {
+            if(player.getEmail() == addplayer.getEmail())
+            {
+                return null;//add exeption
+            }
+        }
+        Player savedPlayer = playerRepository.save(addplayer);
         logger.info("Saving player with id " + savedPlayer.getId());
         return savedPlayer;
     }

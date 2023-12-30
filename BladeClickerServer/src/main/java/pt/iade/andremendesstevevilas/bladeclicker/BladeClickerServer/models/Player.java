@@ -17,6 +17,7 @@ public class Player {
     @Column(name = "player_email") private String email;
     @Column(name = "player_password") private String password;
     @Column(name = "player_score") private double score;
+    @Column(name = "player_taps") private int taps;
 
     public Player(){}
     public int getId() { return id; }
@@ -24,4 +25,5 @@ public class Player {
     public String getEmail(){return email;}
     public String getPassword(){return password;}
     public double getScore(){return score;}
+    public int getTaps(){return taps;}
 }
