@@ -1,10 +1,10 @@
-package pt.iade.controllers;
+package pt.iade.andremendesstevevilas.bladeclicker.BladeClickerServer.controllers;
 import java.util.Optional;
-import java.util.logging.Logger;
 
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
+import pt.iade.andremendesstevevilas.bladeclicker.BladeClickerServer.models.exceptions.NotFoundException;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +21,7 @@ import pt.iade.andremendesstevevilas.bladeclicker.BladeClickerServer.models.repo
 @RestController
 @RequestMapping(path = "/api/achievmentscores")
 public class AchievmentScoreController {
-    private Logger logger = (Logger) LoggerFactory.getLogger(PlayerController.class);
+    private Logger logger = (Logger) LoggerFactory.getLogger(AchievmentScoreController.class);
     @Autowired
     private Achievment_Score_Repository achievment_Score_Repository;
 
@@ -36,8 +36,7 @@ public class AchievmentScoreController {
         logger.info("Sending achievment score with id " + id);
         Optional<Achievment_Score> _achievmentscore = achievment_Score_Repository.findById(id);
         if (_achievmentscore.isEmpty())
-            // throw new NotFoundException("" + id, "Player", "id");
-            return null;
+             throw new NotFoundException("" + id, "Player", "id");
         else
             return _achievmentscore.get();
     }

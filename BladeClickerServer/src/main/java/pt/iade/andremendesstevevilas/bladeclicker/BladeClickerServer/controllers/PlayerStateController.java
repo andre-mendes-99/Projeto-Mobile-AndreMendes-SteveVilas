@@ -1,11 +1,11 @@
-package pt.iade.controllers;
+package pt.iade.andremendesstevevilas.bladeclicker.BladeClickerServer.controllers;
 
 import java.util.Optional;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
 
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
+import pt.iade.andremendesstevevilas.bladeclicker.BladeClickerServer.models.exceptions.NotFoundException;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,12 +15,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import pt.iade.andremendesstevevilas.bladeclicker.BladeClickerServer.models.Player;
 import pt.iade.andremendesstevevilas.bladeclicker.BladeClickerServer.models.Player_State;
 import pt.iade.andremendesstevevilas.bladeclicker.BladeClickerServer.models.Response;
-import pt.iade.andremendesstevevilas.bladeclicker.BladeClickerServer.models.State;
 import pt.iade.andremendesstevevilas.bladeclicker.BladeClickerServer.models.repositories.Player_StateRepository;
-import pt.iade.andremendesstevevilas.bladeclicker.BladeClickerServer.models.repositories.StateRepository;
 
 @RestController
 @RequestMapping(path = "/api/playerstates")
@@ -40,8 +37,7 @@ public class PlayerStateController {
         logger.info("Sending player_state with id " + id);
         Optional<Player_State> _playerstate = playerstateRepository.findById(id);
         if (_playerstate.isEmpty())
-            // throw new NotFoundException("" + id, "State", "id");
-            return null;
+             throw new NotFoundException("" + id, "State", "id");
         else
             return _playerstate.get();
     }

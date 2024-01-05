@@ -1,7 +1,7 @@
-package pt.iade.controllers;
+package pt.iade.andremendesstevevilas.bladeclicker.BladeClickerServer.controllers;
 
 import java.util.Optional;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
 
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import pt.iade.andremendesstevevilas.bladeclicker.BladeClickerServer.models.exceptions.NotFoundException;
 import pt.iade.andremendesstevevilas.bladeclicker.BladeClickerServer.models.Upgrade_to_Buy;
 import pt.iade.andremendesstevevilas.bladeclicker.BladeClickerServer.models.Response;
 import pt.iade.andremendesstevevilas.bladeclicker.BladeClickerServer.models.repositories.Upgrade_to_Buy_Repository;
@@ -36,8 +36,7 @@ public class UpgradetoBuyController {
         logger.info("Sending upgrade with id " + id);
         Optional<Upgrade_to_Buy> _upgrade = upgrade_Repository.findById(id);
         if (_upgrade.isEmpty())
-            // throw new NotFoundException("" + id, "Player", "id");
-            return null;
+            throw new NotFoundException("" + id, "Player", "id");
         else
             return _upgrade.get();
     }

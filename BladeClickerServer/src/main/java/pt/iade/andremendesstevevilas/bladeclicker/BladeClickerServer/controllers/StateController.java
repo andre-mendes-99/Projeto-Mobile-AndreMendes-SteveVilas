@@ -1,6 +1,6 @@
-package pt.iade.controllers;
+package pt.iade.andremendesstevevilas.bladeclicker.BladeClickerServer.controllers;
 import java.util.Optional;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
 
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import pt.iade.andremendesstevevilas.bladeclicker.BladeClickerServer.models.exceptions.NotFoundException;
 
 import pt.iade.andremendesstevevilas.bladeclicker.BladeClickerServer.models.Response;
 import pt.iade.andremendesstevevilas.bladeclicker.BladeClickerServer.models.State;
@@ -35,8 +36,7 @@ public class StateController {
         logger.info("Sending state with id " + id);
         Optional<State> _state = stateRepository.findById(id);
         if (_state.isEmpty())
-            // throw new NotFoundException("" + id, "State", "id");
-            return null;
+             throw new NotFoundException("" + id, "State", "id");
         else
             return _state.get();
     }

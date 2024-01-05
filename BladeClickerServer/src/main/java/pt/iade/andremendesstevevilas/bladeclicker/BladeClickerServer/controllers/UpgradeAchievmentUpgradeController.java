@@ -1,7 +1,7 @@
-package pt.iade.controllers;
+package pt.iade.andremendesstevevilas.bladeclicker.BladeClickerServer.controllers;
 
 import java.util.Optional;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
 
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import pt.iade.andremendesstevevilas.bladeclicker.BladeClickerServer.models.exceptions.NotFoundException;
 
 import pt.iade.andremendesstevevilas.bladeclicker.BladeClickerServer.models.Upgrade_Achievment_Upgrade;
 import pt.iade.andremendesstevevilas.bladeclicker.BladeClickerServer.models.Response;
@@ -37,8 +38,7 @@ public class UpgradeAchievmentUpgradeController {
         logger.info("Sending Upgrade_Achievment_Upgrade with id " + id);
         Optional<Upgrade_Achievment_Upgrade> _playyerupgrade = upgrade_achievment_upgrade_Repository.findById(id);
         if (_playyerupgrade.isEmpty())
-            // throw new NotFoundException("" + id, "Player", "id");
-            return null;
+             throw new NotFoundException("" + id, "Player", "id");
         else
             return _playyerupgrade.get();
     }
