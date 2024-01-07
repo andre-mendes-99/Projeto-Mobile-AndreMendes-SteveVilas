@@ -26,4 +26,11 @@ public class Player {
     public String getPassword(){return Password;}
     public double getScore(){return Score;}
     public int getTaps(){return Taps;}
+
+    public void setId(int id) {this.Id = id; }
+    public void setPlayerName(String pname){this.Playername=pname;}
+    public void setEmail(String pmail){this.Email=pmail;}
+    public void setPassword(String ppass){ this.Password=ppass;}
+    public void setScore(double pscor){this.Score=pscor;}
+    public void setTaps(int ptaps){this.Taps=ptaps;}
 }

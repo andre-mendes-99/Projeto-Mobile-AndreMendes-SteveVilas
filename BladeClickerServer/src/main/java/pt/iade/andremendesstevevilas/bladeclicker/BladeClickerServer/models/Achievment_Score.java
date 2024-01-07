@@ -15,10 +15,11 @@ public class Achievment_Score {
     @Column(name = "achievment_score_id") private int id;
     @Column(name = "achievment_score_title") private String title;
     @Column(name = "achievment_score_description") private String description;
-
+     
     public Achievment_Score(){}
     public int getId(){return id;}
     public String getTitle(){return title;}
     public String getDescription(){return description;}
+
 }
 
