@@ -7,6 +7,7 @@
     <string name="password_hint">Password goes here...</string>
     <string name="go_register_link">Don\'t have account click here</string>
     <string name="login_btn">Login</string>
+    <string name="guest_btn">Guest</string>
 
     //Register
     <string name="password_confirmation_hint">Please confirm your password...</string>

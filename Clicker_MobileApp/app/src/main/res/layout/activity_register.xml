@@ -68,7 +68,6 @@
                 android:ems="10"
                 android:hint="@string/password_hint"
                 android:inputType="textPassword"
-                android:textColor="#000000"
                 android:textSize="24sp" />
         </TableRow>
 
@@ -78,12 +77,11 @@
 
             <EditText
                 android:id="@+id/password_confirmation_register_textbox"
-                android:layout_width="342dp"
+                android:layout_width="352dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/password_confirmation_hint"
                 android:inputType="textPassword"
-                android:textColor="#000000"
                 android:textSize="24sp" />
         </TableRow>
 

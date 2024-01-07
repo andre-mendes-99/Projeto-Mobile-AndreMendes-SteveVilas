@@ -10,6 +10,16 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import pt.iade.andresteve.clicker.models.Player;
+import pt.iade.andresteve.clicker.retrofit.PlayerApi;
+import pt.iade.andresteve.clicker.retrofit.Retrofitservice;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class Register_Activity extends AppCompatActivity {
     private ImageButton btnGoBack;
     private Button btnRegister;
@@ -45,6 +55,15 @@ public class Register_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        Retrofitservice retrofitservice = new Retrofitservice();
+
+        PlayerApi playerApi = retrofitservice.getRetrofit().create(PlayerApi.class);
+
+        textUsername = (EditText)findViewById(R.id.username_register_textbox);
+        textPassword =(EditText)findViewById(R.id.password_register_textbox);
+        textConfirmPass = (EditText)findViewById(R.id.password_confirmation_register_textbox);
+        textEmail =(EditText)findViewById(R.id.email_register_textbox);
+
 
         btnGoBack = (ImageButton)findViewById(R.id.go_back_regiter_button);
         btnRegister = (Button)findViewById(R.id.submit_regist_button);
@@ -76,7 +95,26 @@ public class Register_Activity extends AppCompatActivity {
                 }
                 else
                 {
-                    startActivity(new Intent(Register_Activity.this, MainActivity.class));
+                    String username = textUsername.getText().toString();
+                    String usermail = textEmail.getText().toString();
+                    String userpass = textPassword.getText().toString();
+
+                    Player newplayer = new Player(username, usermail,userpass,0,0);
+
+                    playerApi.addPLayer(newplayer)
+                            .enqueue(new Callback<Player>() {
+                                @Override
+                                public void onResponse(Call<Player> call, Response<Player> response) {
+                                    Toast.makeText(getApplicationContext(), "Jogador registado com sucesso!", Toast.LENGTH_LONG).show();
+                                    startActivity(new Intent(Register_Activity.this, MainActivity.class));
+                                }
+
+                                @Override
+                                public void onFailure(Call<Player> call, Throwable t) {
+                                    Toast.makeText(getApplicationContext(), "Falha ao registar jogador!", Toast.LENGTH_LONG).show();
+                                    Logger.getLogger(Register_Activity.class.getName()).log(Level.SEVERE, "Ocorreu erro!");
+                                }
+                            });
                 }
             }
 
