@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import pt.iade.andresteve.clicker.games.GameInfo;
+import pt.iade.andresteve.clicker.models.Player;
 
 public class activity_stats extends AppCompatActivity {
     private ImageButton btnGoBack;
@@ -21,9 +22,8 @@ public class activity_stats extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stats);
         //get score
-        GameInfo gameInfo = new GameInfo();
         Intent intent = getIntent();
-        gameInfo.score = intent.getDoubleExtra("score", 0);
+        Player player = (Player) intent.getSerializableExtra("player");
 
         btnGoBack = (ImageButton) findViewById(R.id.button_go_back_stats);
         btnAchievments =(Button) findViewById(R.id.button_achievements_stats);
@@ -36,7 +36,7 @@ public class activity_stats extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(activity_stats.this, Configurations_Activity.class);
-                myIntent.putExtra("score", gameInfo.score); //Optional parameters
+                myIntent.putExtra("player", player); //Optional parameters
                 activity_stats.this.startActivity(myIntent);
             }
         });
@@ -47,7 +47,7 @@ public class activity_stats extends AppCompatActivity {
             public void onClick(View view) {
                 //open previous page with score
                 Intent myIntent = new Intent(activity_stats.this, Game_Home_Activity.class);
-                myIntent.putExtra("score", gameInfo.score); //Optional parameters
+                myIntent.putExtra("player", player); //Optional parameters
                 activity_stats.this.startActivity(myIntent);
             }
         });
@@ -56,7 +56,7 @@ public class activity_stats extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(activity_stats.this, activity_shop.class);
-                myIntent.putExtra("score", gameInfo.score); //Optional parameters
+                myIntent.putExtra("player", player); //Optional parameters
                 activity_stats.this.startActivity(myIntent);
             }
         });
@@ -65,7 +65,7 @@ public class activity_stats extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(activity_stats.this, activity_achievements.class);
-                myIntent.putExtra("score", gameInfo.score); //Optional parameters
+                myIntent.putExtra("player", player); //Optional parameters
                 activity_stats.this.startActivity(myIntent);
             }
         });

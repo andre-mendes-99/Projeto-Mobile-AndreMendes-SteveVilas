@@ -39,7 +39,6 @@
                 android:id="@+id/username_name_configuration_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/provisory_text"
                 android:textColor="#000000"
                 android:textSize="24sp"
                 android:textStyle="bold" />

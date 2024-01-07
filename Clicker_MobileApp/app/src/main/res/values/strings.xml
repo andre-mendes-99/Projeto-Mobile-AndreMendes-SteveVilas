@@ -50,10 +50,12 @@
     <string name="button_shop_shop">Shop</string>
     <string name="button_achievements_shop">Achievements</string>
     <string name="button_stats_shop">Stats</string>
-    <string name="shop_upgrade_1">Upgrade 1</string>
-    <string name="shop_upgrade_2">Upgrade 2</string>
-    <string name="shop_upgrade_3">Upgrade 3</string>
-    <string name="shop_upgrade_4">Upgrade 4</string>
+    <string name="shop_upgrade_1">Melhoria de Espada</string>
+    <string name="shop_upgrade_description_1">Melhora a espada, ganha mais pontos a cada toque</string>
+    <string name="shop_upgrade_2">Melhoria Física</string>
+    <string name="shop_upgrade_description_2">O número de toques no ecrã faz com que o multiplicador de pontos aumente</string>
+    <string name="shop_upgrade_3">Melhoria de itens</string>
+    <string name="shop_upgrade_description_3">Os minijogos dão mais pontos</string>
 
 
     //Settings

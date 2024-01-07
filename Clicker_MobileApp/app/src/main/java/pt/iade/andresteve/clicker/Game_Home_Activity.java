@@ -9,6 +9,7 @@ import android.widget.*;
 import android.widget.TextView;
 
 import pt.iade.andresteve.clicker.games.GameInfo;
+import pt.iade.andresteve.clicker.models.Player;
 
 public class Game_Home_Activity extends AppCompatActivity {
     private ImageButton btnClickerTemp;
@@ -23,12 +24,14 @@ public class Game_Home_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_home);
-        GameInfo gameInfo = new GameInfo();
         Intent intent = getIntent();
-        gameInfo.score = intent.getDoubleExtra("score", 0);
+        GameInfo gamepoints = new GameInfo();
+
+        Player player = (Player) intent.getSerializableExtra("player");
+        gamepoints.score = player.getScore();
         //Score View:
         scoreView = (TextView)findViewById(R.id.score_game_home_textview);
-        scoreView.setText(Double.toString(gameInfo.score));
+        scoreView.setText(Double.toString(gamepoints.score));
 
         //Buttons:
         btnMiniGame= (ImageButton) findViewById(R.id.btn_minigame_game_home);
@@ -42,8 +45,14 @@ public class Game_Home_Activity extends AppCompatActivity {
         btnClickerTemp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                gameInfo.score+=1;
-             scoreView.setText(Double.toString(gameInfo.score));
+                //definir pontuação através de nivel de melhoria
+
+                player.setTaps(player.getTaps() * (player.getUpgrade2Level()/2)+1);
+                gamepoints.score += player.getScore() * (player.getTaps()/2) * (player.getUpgrade1Level()/2)+1;
+                player.setScore(gamepoints.score);
+
+
+                scoreView.setText(Double.toString(gamepoints.score));
             }
 
         });
@@ -53,7 +62,7 @@ public class Game_Home_Activity extends AppCompatActivity {
             @Override 
             public void onClick(View view) {
                 Intent myIntent = new Intent(Game_Home_Activity.this, Configurations_Activity.class);
-                myIntent.putExtra("score", gameInfo.score); //Optional parameters
+                myIntent.putExtra("player", player); //Optional parameters
                 Game_Home_Activity.this.startActivity(myIntent);
             }
         });
@@ -63,7 +72,7 @@ public class Game_Home_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(Game_Home_Activity.this, Rock_Paper_Scissors_Activity.class);
-                myIntent.putExtra("score", gameInfo.score); //Optional parameters
+                myIntent.putExtra("player", player); //Optional parameters
                 Game_Home_Activity.this.startActivity(myIntent);
             }
         });
@@ -73,7 +82,7 @@ public class Game_Home_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(Game_Home_Activity.this, activity_shop.class);
-                myIntent.putExtra("score", gameInfo.score); //Optional parameters
+                myIntent.putExtra("player", player); //Optional parameters
                 Game_Home_Activity.this.startActivity(myIntent);
             }
         });
@@ -83,7 +92,7 @@ public class Game_Home_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(Game_Home_Activity.this, activity_achievements.class);
-                myIntent.putExtra("score", gameInfo.score); //Optional parameters
+                myIntent.putExtra("player", player); //Optional parameters
                 Game_Home_Activity.this.startActivity(myIntent);
 
             }
@@ -94,7 +103,7 @@ public class Game_Home_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(Game_Home_Activity.this, activity_stats.class);
-                myIntent.putExtra("score", gameInfo.score); //Optional parameters
+                myIntent.putExtra("player", player); //Optional parameters
                 Game_Home_Activity.this.startActivity(myIntent);            }
         });
     }

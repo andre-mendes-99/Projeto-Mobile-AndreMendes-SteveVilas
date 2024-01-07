@@ -99,7 +99,7 @@ public class Register_Activity extends AppCompatActivity {
                     String usermail = textEmail.getText().toString();
                     String userpass = textPassword.getText().toString();
 
-                    Player newplayer = new Player(username, usermail,userpass,0,0);
+                    Player newplayer = new Player(username, usermail,userpass,0,0,0,10,0,10,0,10);
 
                     playerApi.addPLayer(newplayer)
                             .enqueue(new Callback<Player>() {

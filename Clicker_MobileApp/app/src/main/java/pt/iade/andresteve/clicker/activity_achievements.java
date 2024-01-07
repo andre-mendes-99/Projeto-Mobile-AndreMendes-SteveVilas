@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import pt.iade.andresteve.clicker.games.GameInfo;
+import pt.iade.andresteve.clicker.models.Player;
 
 public class activity_achievements extends AppCompatActivity {
     private ImageButton btnGoBack;
@@ -22,9 +23,8 @@ public class activity_achievements extends AppCompatActivity {
         setContentView(R.layout.activity_achievements);
 
         //get score
-        GameInfo gameInfo = new GameInfo();
         Intent intent = getIntent();
-        gameInfo.score = intent.getDoubleExtra("score", 0);
+        Player player = (Player) intent.getSerializableExtra("player");
 
         btnGoBack = (ImageButton) findViewById(R.id.button_go_back_achievements_button);
         btnStats = (Button) findViewById(R.id.button_stats_achievements);
@@ -36,7 +36,7 @@ public class activity_achievements extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(activity_achievements.this, Configurations_Activity.class);
-                myIntent.putExtra("score", gameInfo.score); //Optional parameters
+                myIntent.putExtra("player", player); //Optional parameters
                 activity_achievements.this.startActivity(myIntent);
             }
         });
@@ -47,7 +47,7 @@ public class activity_achievements extends AppCompatActivity {
             public void onClick(View view) {
                 //open previous page with score
                 Intent myIntent = new Intent(activity_achievements.this, Game_Home_Activity.class);
-                myIntent.putExtra("score", gameInfo.score); //Optional parameters
+                myIntent.putExtra("player", player); //Optional parameters
                 activity_achievements.this.startActivity(myIntent);
             }
         });
@@ -57,7 +57,7 @@ public class activity_achievements extends AppCompatActivity {
             public void onClick(View v) {
                 //open previous page with score
                 Intent myIntent = new Intent(activity_achievements.this, activity_stats.class);
-                myIntent.putExtra("score", gameInfo.score); //Optional parameters
+                myIntent.putExtra("player", player); //Optional parameters
                 activity_achievements.this.startActivity(myIntent);
             }
         });
@@ -67,7 +67,7 @@ public class activity_achievements extends AppCompatActivity {
             public void onClick(View v) {
                 //open previous page with score
                 Intent myIntent = new Intent(activity_achievements.this, activity_shop.class);
-                myIntent.putExtra("score", gameInfo.score); //Optional parameters
+                myIntent.putExtra("player", player); //Optional parameters
                 activity_achievements.this.startActivity(myIntent);
             }
         });

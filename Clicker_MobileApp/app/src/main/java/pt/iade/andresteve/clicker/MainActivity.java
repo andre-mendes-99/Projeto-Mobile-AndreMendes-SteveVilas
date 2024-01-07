@@ -66,8 +66,10 @@ public class MainActivity extends AppCompatActivity {
         btnGuest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Player player = new Player("Guest", "guest@mail.com","123456789",0,0,1,10,1,10,1,10);
                 Intent myIntent = new Intent(MainActivity.this, Game_Home_Activity.class);
-                //myIntent.putExtra("score", gameInfo.score); //Optional parameters
+                myIntent.putExtra("player", player); //Optional parameters
                 MainActivity.this.startActivity(myIntent);
             }
         });

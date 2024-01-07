@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 import java.util.Random;
 
 import pt.iade.andresteve.clicker.games.GameInfo;
+import pt.iade.andresteve.clicker.models.Player;
 
 
 public class Rock_Paper_Scissors_Activity extends AppCompatActivity {
@@ -27,10 +28,12 @@ public class Rock_Paper_Scissors_Activity extends AppCompatActivity {
 
     Random rand = new Random();
 
-    public void Game(int jogada,  GameInfo gameInfo) {
+    public void Game(int jogada,  Player player) {
         int jogadaCpu = rand.nextInt(4);
+
         AlertDialog.Builder alert = new AlertDialog.Builder(Rock_Paper_Scissors_Activity.this);
-        int reward= 100; //Todo calcular reward
+        int reward= (player.getUpgrade3Level()/2)* 5; //Todo calcular reward
+
         switch (jogada) {
             case Rock:
                 if (jogadaCpu == Rock) {
@@ -41,7 +44,7 @@ public class Rock_Paper_Scissors_Activity extends AppCompatActivity {
 
                     alert.setPositiveButton("Ok", (DialogInterface.OnClickListener) (dialog, which) -> {
                         Intent myIntent = new Intent(Rock_Paper_Scissors_Activity.this, Rock_Paper_Scissors_Activity.class);
-                        myIntent.putExtra("score", gameInfo.score);
+                        myIntent.putExtra("player", player);
                         Rock_Paper_Scissors_Activity.this.startActivity(myIntent);
                     });
 
@@ -57,7 +60,7 @@ public class Rock_Paper_Scissors_Activity extends AppCompatActivity {
                     alert.setPositiveButton("Ok", (DialogInterface.OnClickListener) (dialog, which) -> {
 
                         Intent myIntent = new Intent(Rock_Paper_Scissors_Activity.this, Game_Home_Activity.class);
-                        myIntent.putExtra("score", gameInfo.score);
+                        myIntent.putExtra("player", player);
                         Rock_Paper_Scissors_Activity.this.startActivity(myIntent);
                     });
 
@@ -71,9 +74,9 @@ public class Rock_Paper_Scissors_Activity extends AppCompatActivity {
                     alert.setCancelable(false);
 
                     alert.setPositiveButton("Ok", (DialogInterface.OnClickListener) (dialog, which) -> {
-                        gameInfo.score += reward;
+                        player.setScore(player.getScore()+reward);
                         Intent myIntent = new Intent(Rock_Paper_Scissors_Activity.this, Game_Home_Activity.class);
-                        myIntent.putExtra("score", gameInfo.score);
+                        myIntent.putExtra("player", player);
                         Rock_Paper_Scissors_Activity.this.startActivity(myIntent);
                     });
 
@@ -90,9 +93,9 @@ public class Rock_Paper_Scissors_Activity extends AppCompatActivity {
                     alert.setCancelable(false);
 
                     alert.setPositiveButton("Ok", (DialogInterface.OnClickListener) (dialog, which) -> {
-                        gameInfo.score += reward;
+                        player.setScore(player.getScore()+reward);
                         Intent myIntent = new Intent(Rock_Paper_Scissors_Activity.this, Game_Home_Activity.class);
-                        myIntent.putExtra("score", gameInfo.score);
+                        myIntent.putExtra("player", player);
                         Rock_Paper_Scissors_Activity.this.startActivity(myIntent);
                     });
 
@@ -107,7 +110,7 @@ public class Rock_Paper_Scissors_Activity extends AppCompatActivity {
 
                     alert.setPositiveButton("Ok", (DialogInterface.OnClickListener) (dialog, which) -> {
                         Intent myIntent = new Intent(Rock_Paper_Scissors_Activity.this, Rock_Paper_Scissors_Activity.class);
-                        myIntent.putExtra("score", gameInfo.score);
+                        myIntent.putExtra("player", player);
                         Rock_Paper_Scissors_Activity.this.startActivity(myIntent);
                     });
 
@@ -124,7 +127,7 @@ public class Rock_Paper_Scissors_Activity extends AppCompatActivity {
                     alert.setPositiveButton("Ok", (DialogInterface.OnClickListener) (dialog, which) -> {
 
                         Intent myIntent = new Intent(Rock_Paper_Scissors_Activity.this, Game_Home_Activity.class);
-                        myIntent.putExtra("score", gameInfo.score);
+                        myIntent.putExtra("player", player);
                         Rock_Paper_Scissors_Activity.this.startActivity(myIntent);
                     });
 
@@ -143,7 +146,7 @@ public class Rock_Paper_Scissors_Activity extends AppCompatActivity {
                     alert.setPositiveButton("Ok", (DialogInterface.OnClickListener) (dialog, which) -> {
 
                         Intent myIntent = new Intent(Rock_Paper_Scissors_Activity.this, Game_Home_Activity.class);
-                        myIntent.putExtra("score", gameInfo.score);
+                        myIntent.putExtra("player", player);
                         Rock_Paper_Scissors_Activity.this.startActivity(myIntent);
                     });
 
@@ -157,9 +160,9 @@ public class Rock_Paper_Scissors_Activity extends AppCompatActivity {
                     alert.setCancelable(false);
 
                     alert.setPositiveButton("Ok", (DialogInterface.OnClickListener) (dialog, which) -> {
-                        gameInfo.score += reward;
+                        player.setScore(player.getScore()+reward);
                         Intent myIntent = new Intent(Rock_Paper_Scissors_Activity.this, Game_Home_Activity.class);
-                        myIntent.putExtra("score", gameInfo.score);
+                        myIntent.putExtra("player", player);
                         Rock_Paper_Scissors_Activity.this.startActivity(myIntent);
                     });
 
@@ -174,7 +177,7 @@ public class Rock_Paper_Scissors_Activity extends AppCompatActivity {
 
                     alert.setPositiveButton("Ok", (DialogInterface.OnClickListener) (dialog, which) -> {
                         Intent myIntent = new Intent(Rock_Paper_Scissors_Activity.this, Rock_Paper_Scissors_Activity.class);
-                        myIntent.putExtra("score", gameInfo.score);
+                        myIntent.putExtra("player", player);
                         Rock_Paper_Scissors_Activity.this.startActivity(myIntent);
                     });
 
@@ -190,10 +193,11 @@ public class Rock_Paper_Scissors_Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        GameInfo gameInfo = new GameInfo();
         setContentView(R.layout.activity_rock_paper_scissors);
+
         Intent intent = getIntent();
-        gameInfo.score = intent.getDoubleExtra("score", 0);
+        Player player = (Player) intent.getSerializableExtra("player");
+
         //buttons
         rockButton= (ImageButton) findViewById(R.id.rock_button_rock_paper_scissors);
         paperButton = (ImageButton) findViewById(R.id.paper_button_rock_paper_scissors);
@@ -204,7 +208,7 @@ public class Rock_Paper_Scissors_Activity extends AppCompatActivity {
         paperButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            Game(Paper, gameInfo);
+            Game(Paper, player);
             }
         });
 
@@ -212,14 +216,14 @@ public class Rock_Paper_Scissors_Activity extends AppCompatActivity {
  rockButton.setOnClickListener(new View.OnClickListener() {
      @Override
      public void onClick(View v) {
-         Game(Rock, gameInfo);
+         Game(Rock, player);
      }
  });
         //player carrega no botão de tesoura:
     scissorButton.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Game(Scissors, gameInfo);
+            Game(Scissors, player);
         }
     });
     }

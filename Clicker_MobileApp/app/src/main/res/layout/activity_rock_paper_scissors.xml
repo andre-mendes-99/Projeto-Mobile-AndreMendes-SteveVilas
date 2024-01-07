@@ -14,12 +14,13 @@
         android:layout_marginTop="25dp"
         android:adjustViewBounds="true"
         android:background="#00FFFFFF"
+        android:backgroundTint="#00FFFFFF"
         android:contentDescription="@string/button_rock"
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/fist" />
+        app:srcCompat="@drawable/stone" />
 
     <ImageButton
         android:id="@+id/paper_button_rock_paper_scissors"
