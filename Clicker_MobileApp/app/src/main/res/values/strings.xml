@@ -31,10 +31,12 @@
     <string name="button_shop_achievements">Shop</string>
     <string name="button_achievements_achievements">Achievements</string>
     <string name="button_stats_achievements">Stats</string>
-    <string name="achievement_1">Achievement 1</string>
-    <string name="achievement_2">Achievement 2</string>
-    <string name="achievement_3">Achievement 3</string>
-    <string name="achievement_4">AChievement 4</string>
+    <string name="achievement_1">1000 pontos</string>
+    <string name="achievement_2">10000 pontos</string>
+    <string name="achievement_3">Primeiros Passos...</string>
+    <string name="achievement_3_descri">Conseguir a primeira melhoria</string>
+    <string name="achievement_4">Upado ao Maximo</string>
+    <string name="achievement_4_descri">Conseguir todas as melhorias</string>
 
     //Stats
     <string name="button_shop_stats">Shop</string>

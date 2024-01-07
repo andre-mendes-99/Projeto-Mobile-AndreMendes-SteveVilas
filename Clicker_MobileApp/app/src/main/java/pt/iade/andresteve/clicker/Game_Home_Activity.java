@@ -52,7 +52,7 @@ public class Game_Home_Activity extends AppCompatActivity {
                 player.setScore(gamepoints.score);
 
 
-                scoreView.setText(Double.toString(gamepoints.score));
+                scoreView.setText(Double.toString(player.getScore()));
             }
 
         });
