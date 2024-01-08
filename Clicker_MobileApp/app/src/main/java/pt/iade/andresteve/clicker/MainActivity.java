@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
                               }
                               else
                               {
-                                  Toast.makeText(getApplicationContext(), "Login efectuado com sucesso!", Toast.LENGTH_LONG).show();
+                                  Toast.makeText(getApplicationContext(), "Erro ao efectuar Login!", Toast.LENGTH_LONG).show();
                               }
                           }
                       }
